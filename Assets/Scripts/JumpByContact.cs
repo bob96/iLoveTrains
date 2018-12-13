@@ -7,15 +7,24 @@ public class JumpByContact : MonoBehaviour {
     private Rigidbody rb;
     public GameObject bumpSound;
     public float thrust;
+    public static bool touched;
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("Player"))
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            Instantiate(bumpSound, transform.position, Quaternion.identity);           
-           rb =  other.GetComponent<Rigidbody>();
-           rb.AddForce(Vector3.up * thrust, ForceMode.Impulse);
-           Destroy(gameObject, 2);
+
+            Instantiate(bumpSound, transform.position, Quaternion.identity);
+            rb = other.gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.up * thrust, ForceMode.Impulse);
+            //rb.velocity = Vector3.up*thrust*Time.deltaTime;
+            Destroy(gameObject, 2);
         }
     }
+    
 }

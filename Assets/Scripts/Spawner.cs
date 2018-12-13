@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour {
     public float increaseTime;
     public float maxTime = 1.5f;
 
-
     private void Update()
     {
         if (timeBtwSpawn <= 0)
@@ -21,9 +20,9 @@ public class Spawner : MonoBehaviour {
 
             int rand = Random.Range(0, trainPatterns.Length);
             Instantiate(trainPatterns[rand], transform.position, Quaternion.identity);
-            
+
             timeBtwSpawn = startTimeBtwSpawn;
-            if(startTimeBtwSpawn < maxTime)
+            if (startTimeBtwSpawn < maxTime)
             {
                 startTimeBtwSpawn += increaseTime;
             }
@@ -33,5 +32,7 @@ public class Spawner : MonoBehaviour {
             timeBtwSpawn -= Time.deltaTime;
         }
     }
+
+
 
 }

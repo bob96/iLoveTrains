@@ -9,6 +9,10 @@ TagManager:
   - TrainDestroyer
   - Train
   - LevelChanger
+  - Right
+  - Left
+  - WallCounter
+  - HighScore
   layers:
   - Default
   - TransparentFX

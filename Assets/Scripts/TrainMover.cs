@@ -6,6 +6,7 @@ public class TrainMover : MonoBehaviour {
 
     private Rigidbody rb;
     public float trainThrust;
+    
 
 
 

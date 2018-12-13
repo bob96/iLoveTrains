@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections; 
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -11,17 +11,20 @@ public class GameController : MonoBehaviour {
     private bool restart;
     private bool startTheGame;
     private Vector3 spawnPosition;
+    private bool newBest;
     //public
     public Text scoreText;
     public GameObject gameOverLayout;
     public int scoreValue;
     public LevelChanger levelChanger;
     public Text gameOverText;
+    public Text HighScoreText;
 
 
 
     private void Start()
     {
+           
         if (!gameOver)
         {
             Invoke("AddOneToScore", 1);
@@ -51,12 +54,31 @@ public class GameController : MonoBehaviour {
         if (gameOver)
         {
             gameOverLayout.SetActive(true);
+            UpdateHighScore(score);
+            if (newBest)
+            {
+                HighScoreText.text = "your new best : " + PlayerPrefs.GetInt("HighScore");
+            }
+            else
+            {
+                HighScoreText.text = "your best : " + PlayerPrefs.GetInt("HighScore");
+            }
+                  
         }
     }
 
-    void UpdateScore()
+    void UpdateHighScore(int score)
     {
-        
+        if(PlayerPrefs.GetInt("HighScore") < score)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            newBest = true;
+        }
+        else
+        {
+            newBest = false;
+        }
+         
     }
     public void AddScore(int scoreValue)
     {
