@@ -24,8 +24,7 @@ GameObject:
   - component: {fileID: 23719665403417718}
   - component: {fileID: 54334840092657314}
   - component: {fileID: 65572551681720458}
-  - component: {fileID: 114479589869200586}
-  - component: {fileID: 114623339505740806}
+  - component: {fileID: 114482838461763676}
   m_Layer: 0
   m_Name: Train03
   m_TagString: Train
@@ -177,7 +176,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!54 &54703047817622620
 Rigidbody:
@@ -311,19 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 10
---- !u!114 &114479589869200586
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1620709655709984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1968c476ae7974d858aa68e71eba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainThrust: -50
---- !u!114 &114623339505740806
+--- !u!114 &114482838461763676
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

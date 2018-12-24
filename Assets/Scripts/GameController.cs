@@ -25,10 +25,7 @@ public class GameController : MonoBehaviour {
     private void Start()
     {
            
-        if (!gameOver)
-        {
-            Invoke("AddOneToScore", 1);
-        }
+        
         score = 0;
         scoreText.text = " score :" + score;    
         restart = false;

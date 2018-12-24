@@ -46,8 +46,7 @@ GameObject:
   - component: {fileID: 23538662265716904}
   - component: {fileID: 54139268022206208}
   - component: {fileID: 65635445725958756}
-  - component: {fileID: 114451698987770916}
-  - component: {fileID: 114954403033189700}
+  - component: {fileID: 114316148456099050}
   m_Layer: 0
   m_Name: Train02
   m_TagString: Train
@@ -177,7 +176,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!54 &54606557554104942
 Rigidbody:
@@ -299,7 +298,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114451698987770916
+--- !u!114 &114316148456099050
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -307,10 +306,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780570592196370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1968c476ae7974d858aa68e71eba5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b0c1b0b363fdbb48995ce5b5e70bfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainThrust: -50
+  bumpSound: {fileID: 1691494242258188, guid: 6c37477e8274b524f93add1fe351e1dc, type: 2}
+  thrust: 5
 --- !u!114 &114595089417667572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,19 +338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 10
---- !u!114 &114954403033189700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1780570592196370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0c1b0b363fdbb48995ce5b5e70bfa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bumpSound: {fileID: 1691494242258188, guid: 6c37477e8274b524f93add1fe351e1dc, type: 2}
-  thrust: 5
 --- !u!136 &136823458171093920
 CapsuleCollider:
   m_ObjectHideFlags: 1

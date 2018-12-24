@@ -68,8 +68,7 @@ GameObject:
   - component: {fileID: 23720212665922752}
   - component: {fileID: 54451847774859944}
   - component: {fileID: 65086003596659232}
-  - component: {fileID: 114997540503530330}
-  - component: {fileID: 114607712014509450}
+  - component: {fileID: 114721487774157668}
   m_Layer: 0
   m_Name: Train04
   m_TagString: Train
@@ -254,7 +253,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!54 &54605817130638414
 Rigidbody:
@@ -487,7 +486,7 @@ MonoBehaviour:
     type: 2}
   scoreValue: 100
   gameController: {fileID: 0}
---- !u!114 &114607712014509450
+--- !u!114 &114721487774157668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -539,18 +538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 10
---- !u!114 &114997540503530330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703661554752354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1968c476ae7974d858aa68e71eba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainThrust: -50
 --- !u!136 &136526575637775658
 CapsuleCollider:
   m_ObjectHideFlags: 1

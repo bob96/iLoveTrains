@@ -24,8 +24,7 @@ GameObject:
   - component: {fileID: 23102300463174510}
   - component: {fileID: 54392013613793580}
   - component: {fileID: 65635403625864990}
-  - component: {fileID: 114892165382735734}
-  - component: {fileID: 114228935500025362}
+  - component: {fileID: 114360154831867126}
   m_Layer: 0
   m_Name: Train1
   m_TagString: Train
@@ -100,7 +99,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &65349694024019896
 BoxCollider:
@@ -126,7 +125,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114228935500025362
+--- !u!114 &114360154831867126
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -139,15 +138,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 1691494242258188, guid: 6c37477e8274b524f93add1fe351e1dc, type: 2}
   thrust: 5
---- !u!114 &114892165382735734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1797235507210138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1968c476ae7974d858aa68e71eba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainThrust: -50

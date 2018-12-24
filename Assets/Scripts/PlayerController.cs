@@ -11,15 +11,18 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour {
 
+    private Vector3 desiredPosition;
     public float speed;
-    public float thrustDown;
+    public float thrust;
     private Quaternion calibrationQuaternion;
     //public float speedForward;
     public Boundary boundary;
     private Rigidbody rb;
     private float screenWidth;
     private float horizontalMove;
+    private float vecticalMove;
     private float maxY;
+    //public static bool isGrounded;
     
 
 	// Use this for initialization
@@ -30,76 +33,30 @@ public class PlayerController : MonoBehaviour {
        
 	}
 
-        
 
     private void FixedUpdate()
     {
-        Vector3 accelarationRaw = Input.acceleration;
-        Vector3 accelaration = FixAcceleration(accelarationRaw);
-
-        //float horizontalMove = Input.();
-        //horizontalMove = Input.GetAxis("Horizontal");
-        
-        // touch input--------------------------------
-        int i = 0;
-        while (i < Input.touchCount)
+        if (Input.touches.Length != 0)
         {
-            if(Input.GetTouch(i).position.x > screenWidth / 2)
+            if (Input.touches[0].position.x > screenWidth / 2)
             {
-                MoveCharacher(1.0f);
+                //moveRight;
+                transform.position += transform.right * Time.deltaTime * thrust;
             }
-            if (Input.GetTouch(i).position.x < screenWidth / 2)
+            else if (Input.touches[0].position.x < screenWidth / 2)
             {
-                MoveCharacher(-1.0f);
+                //moveleft
+                transform.position += -transform.right * Time.deltaTime*thrust;
             }
-            ++i;
         }
-        //--------------------------------------------
-        
-        //Input with accelerometre
-        //rb.velocity = new Vector3(accelaration.x * speed, rb.velocity.y, rb.velocity.z);
-        //input with the horizontal axis
-        rb.velocity = new Vector3(horizontalMove * speed, rb.velocity.y, rb.velocity.z);
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, speed);
 
-        if(transform.position.y >= maxY)
-        {
-            rb.velocity = Vector3.up * thrustDown;
-        }
-
-        rb.position = new Vector3
-           (
-               Mathf.Clamp(transform.position.x, boundary.xMin, boundary.xMax),
-               Mathf.Clamp(transform.position.y, boundary.yMin,boundary.yMax),
-               Mathf.Clamp(transform.position.x, boundary.zMin, boundary.zMax)
-           );
-
-        
-
-       // rb.AddForce(0, 0, speedForward, ForceMode.Impulse);
-
-        
+        Mathf.Clamp(transform.position.x, -4, 4);
 
     }
 
-    public void MoveCharacher(float horizontalInput)
-    {
-        horizontalMove = horizontalInput;
-    }
 
-    //calibrate the input.acceleration input
-    void CalibrateAccellerometer()
-    {
-        //get the acceleration vector3 in a local variable
-        Vector3 accelerationSnapShot = Input.acceleration;
-        //invert the acceleration vector3
-        Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0f, 0.0f, -1.0f), accelerationSnapShot);
-        calibrationQuaternion = Quaternion.Inverse(rotateQuaternion);
-    }
-    //get the calibrated value from the input
-    Vector3 FixAcceleration(Vector3 acceleration)
-    {
-        Vector3 fixedAcceleration = calibrationQuaternion * acceleration;
-        return fixedAcceleration;
-    }
+
+
 
 }

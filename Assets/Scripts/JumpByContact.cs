@@ -22,8 +22,8 @@ public class JumpByContact : MonoBehaviour {
             Instantiate(bumpSound, transform.position, Quaternion.identity);
             rb = other.gameObject.GetComponent<Rigidbody>();
             rb.AddForce(Vector3.up * thrust, ForceMode.Impulse);
-            //rb.velocity = Vector3.up*thrust*Time.deltaTime;
-            Destroy(gameObject, 2);
+            rb.velocity = Vector3.up*thrust*Time.deltaTime;
+            //Destroy(gameObject, 2);
         }
     }
     

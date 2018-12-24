@@ -13,6 +13,10 @@ TagManager:
   - Left
   - WallCounter
   - HighScore
+  - EndLevel
+  - CurrentLevel
+  - PastLevel
+  - FuturLevel
   layers:
   - Default
   - TransparentFX
